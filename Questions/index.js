@@ -77,3 +77,28 @@ console.log(JSON.stringify(parsedObj));
 console.log(JSON.parse('{"name":"Saurabh"}'));
 
 // Q.5 What is the purpose of the array slice method ?
+//The slice() method returns the selected elements in an array as a new array object.
+
+const sambleArr = [2, 5, 7, 8, 9, 52, 65];
+console.log(sambleArr.slice(0, 5));
+
+// Q.6 What is the purpose of the array splice method ?
+//The Splice methode is used to add/delete elements to/from the array and it returns deleted elements
+console.log(sambleArr.splice(2, 1, 6));
+console.log(sambleArr);
+
+// Q.7 Difference between Object and Map
+// Object and Map are similar to each other both let you set keys to value, retrieve values, delete keys.
+// The keys of object can be only string and symbol whereas it can be anything(function, primitive data type).
+// Map can be iterable(forEach can be used directly) whereas Object cannot iterate directly(need keys).
+// Map perform better than object
+
+const sampleObj = {
+  name: "Saurabh",
+};
+
+const sampleMap = new Map([["name", "saurabh"]]);
+console.log(sampleObj, sampleMap);
+sampleMap.forEach((item) => console.log(item));
+
+// Q.8 Difference between == and ===
