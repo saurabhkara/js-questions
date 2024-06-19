@@ -102,3 +102,77 @@ console.log(sampleObj, sampleMap);
 sampleMap.forEach((item) => console.log(item));
 
 // Q.8 Difference between == and ===
+// == used for value comparison and === equals to value and type comparison
+
+console.log(10 == "10");
+console.log(10 === "10");
+
+// Q.9 First class function
+// In Javascript, functions are treated like any other variables.
+
+// Q.10 First Order Function
+// A first-order function is a function that doesn’t accept another function as an argument and doesn’t return a function as its return value.
+
+const firstOrder = () => console.log("First Order");
+
+// Q.10 Higher Order Function
+// Higher Order function is function that takes a function as argument or returns a function as return value
+
+function higherOrderFunction(func) {
+  return func;
+}
+
+console.log(
+  higherOrderFunction(() => {
+    console.log("Function");
+  })
+);
+
+// Q.11 Unary function
+// A function that accept only one argument
+
+function printName(name) {
+  console.log("Name", name);
+}
+
+console.log(printName("Saurabh"));
+
+// Q.12 What is Currying function ?
+// Currying is the process taking a function with multiple arguments and turning it into sequence of functions each only with single argument
+// Curried function are great to improve code reuseablity and function composition
+
+function mutipleArgs(a, b, c, d) {
+  return a + b + c + d;
+}
+
+function currying(a) {
+  return (b) => {
+    return (c) => {
+      return (d) => {
+        return a + b + c + d;
+      };
+    };
+  };
+}
+
+console.log(currying(5)(4)(3)(2));
+
+// Q.13 Pure function
+//Pure function is function whose return value is only determined by its arguments witout side effect
+
+function pureFunc(a, b) {
+  return a + b;
+}
+console.log(pureFunc(5, 6));
+
+// Q.14 Purpuse of use of let keyword
+// Let statement variable is used to create block scope local variable. It also hoist but cannot accessed before its intialization
+
+// console.log(avariable);
+let avariable = 50;
+console.log(avariable);
+
+// Q.15 Difference between let and var
+// let is block scope variable where as var is function scope
+// let is also hoist but not intialized whereas var is hoist
+// var can be re-declare whereas let cannot within same scope
