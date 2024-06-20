@@ -176,3 +176,33 @@ console.log(avariable);
 // let is block scope variable where as var is function scope
 // let is also hoist but not intialized whereas var is hoist
 // var can be re-declare whereas let cannot within same scope
+
+//Q.16 Redeclare variable in switch block
+
+let flag = 7;
+switch (flag) {
+  case 2: {
+    let name = "saurabh";
+    console.log(name);
+    break;
+  }
+  case 7: {
+    let name = "Sanjay";
+    console.log(name);
+    break;
+  }
+  default: {
+    console.log("Default");
+  }
+}
+
+// Q.18 Temporal Dead Zone
+//Temporal Dead is behavior in JavaScript that occurs when declaring variable with let and const keyword but not with var.
+
+console.log(tdz1);
+// console.log(tdz2); // Add breakpoint here
+var tdz1 = "temporal";
+let tdz2 = "temporal dead zone";
+
+// Q.22 IIFE
+//IIFE
