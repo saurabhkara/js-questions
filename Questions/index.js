@@ -205,4 +205,112 @@ var tdz1 = "temporal";
 let tdz2 = "temporal dead zone";
 
 // Q.22 IIFE
-//IIFE
+//IIFE(Immediately invoked function expression) is JavaScript function it run as soon as possible as it is defined.
+//The primary reason to use an IIFE inner declared variables cannot be accessed outside of function.
+
+const rett = (function () {
+  var abb = 10;
+  console.log(abb);
+  return abb;
+})();
+
+console.log("rett", rett);
+
+// Q. What is memoization ?
+// Memoization is technique to increase the functions performance by caching its previously computed result.
+// If its already calculated in past we don't need to calculate simply return the value from cache.
+// JavaScript Closures are to used for memoization.
+
+function memoization() {
+  const cache = {};
+  return function (value) {
+    if (cache[value]) {
+      console.log("Returning from cache");
+      return cache[value];
+    }
+    const calculatedValue = value ** 3;
+    cache[value] = calculatedValue;
+    return calculatedValue;
+  };
+}
+
+const memo = memoization();
+console.log(memo(15));
+console.log(memo(15));
+console.log(memo(15));
+
+// Q. What is Hoisting ?
+// Hoisting is javaScript behaviour in which variables,functions are moved to top of their scope before its code execution;
+
+console.log(name1);
+var name1 = "saurabh";
+
+// Q. What are classes in JavaScript ?
+// Classes in javascript is syntatic sugar over javascript exsiting type of prototype based inheritance.
+//Classes are the blue print of objects.
+
+class PrintName {
+  constructor(name) {
+    this.name = name;
+  }
+  print() {
+    console.log(this.name);
+  }
+}
+
+const printObj = new PrintName("Saurabh");
+printObj.print();
+
+// Q. What are closures ?
+//Closures are function and its lexical scope within which it has been defined. It has access to its variable, outer function variable and global variable.
+
+function outer() {
+  let name = "closure";
+  function inner() {
+    console.log("Inner", name);
+  }
+  inner();
+}
+
+outer();
+
+// Q. What are the modules ?
+// Module refers to small indepedent reuseable code. It also act as foundation of many javascript design patterns.
+
+// Q. What are promises in JavaScript ?
+// Promises in javascript is object that will return a value sometime in future either a resolve value or rejected value.
+
+const promise = new Promise((resolve, reject) => {
+  console.log("Promise ");
+  resolve("Resolved");
+});
+
+promise
+  .then((res) => {
+    console.log(res);
+    return "data";
+  })
+  .then((res) => {
+    console.log(res);
+    throw new Error("error");
+  })
+  .finally((final) => {
+    console.log("finally", final);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
+// Q. What are callbacks function
+// Callback is function passed into another function as argument and invoked inside outer function to perform some  action
+
+function outerFunc(callback) {
+  const name = prompt("Please enter your name");
+  callback(name);
+}
+
+function callbackFunc(name) {
+  console.log("Callback function invoked", name);
+}
+
+outerFunc(callbackFunc);
