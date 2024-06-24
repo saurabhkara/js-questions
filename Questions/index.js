@@ -313,4 +313,142 @@ function callbackFunc(name) {
   console.log("Callback function invoked", name);
 }
 
-outerFunc(callbackFunc);
+// outerFunc(callbackFunc);
+
+// Q. What is callback in callback ?
+// You can nest one callback inside into another callback to execute the actions sequentially one after another.
+
+// Q. What is promise chaining ?
+// Process of executing a sequence of asynchronous task one after another using promise is called promise chaining.
+
+const samplePromise = new Promise((resolve, reject) => {
+  console.log("First Promise");
+  resolve("Resolved");
+});
+
+samplePromise
+  .then((res) => {
+    console.log(res);
+    return "Task 1";
+  })
+  .then((res) => {
+    console.log(res);
+    return "Task 2";
+  })
+  .then((res) => {
+    console.log(res);
+  });
+
+// Q. Promise.all([])
+// Promise.all([]) method takes array of promises and gets resolved when all promises are resolved. It will rejected anyone of rejected.
+
+const promise1 = new Promise((resolve, reject) => {
+  resolve("Promise 1");
+});
+
+const promise2 = new Promise((resolve, reject) => {
+  // reject("Promise 2");
+  resolve("Promise 2");
+});
+
+const promise3 = new Promise((resolve, reject) => {
+  // reject("Promise 3");
+  resolve("Promise 3");
+});
+
+Promise.all([promise1, promise2, promise3])
+  .then((res) => {
+    console.log("Promise resolved", res);
+  })
+  .catch((err) => {
+    console.log("rejected", err);
+  });
+
+// Q. Promise.race() method
+// Promise.race() method takes array of promise and return the promise instance which is firstly resolved.
+
+const p1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("1st Promise");
+  }, 1000);
+});
+
+const p2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("2nd promise");
+  }, 2000);
+});
+
+const p3 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    reject("3rd Promise");
+  });
+});
+
+Promise.race([p1, p2, p3])
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => {
+    console.log("Rejected", err);
+  });
+
+// Q. What is async function ?
+// Async function is function declared with async keyword which enables asynchrounous, promise based behaviour to be written in cleaner style to avoid promise chaining.
+
+async function sampleAsyncFunc() {
+  console.log("Async  funct");
+}
+
+sampleAsyncFunc();
+
+// Q.Iterable in Object in JavaScript
+
+const iterableObj = {
+  name: "saurabh",
+  age: 28,
+  address: "Ara",
+  [Symbol.iterator]: function () {
+    const keys = Object.keys(this);
+    let i = 0;
+    return {
+      next: () => {
+        return {
+          value: iterableObj[keys[i++]],
+          done: i > keys.length,
+        };
+      },
+    };
+  },
+};
+
+const iterator = iterableObj[Symbol.iterator]();
+console.log("#iterator", iterator.next());
+console.log("#iterator", iterator.next());
+console.log("#iterator", iterator.next());
+console.log("#iterator", iterator.next());
+
+// Q. Global Execution context in JavaScript
+// Global execution context is special environment created by javascript engine to execute and run javascript code
+
+// Q. Functional execution context
+// Functional execution context is created whenever function is invoked within global execution context.
+
+// Q. Debouncing
+// Debouncing is programming pattern that allows delaying execution of some piece of code until a specied time to avoid
+// to avoid unneccasary CPU cycles, API calls and improve performance.
+
+// Q. Program to reverse each word in the given string
+
+let inputStr1 = "Welcome to JavaScript Practice Question";
+
+function reverse(str, delimeter) {
+  return str.split(delimeter).reverse().join(delimeter);
+}
+
+let result1 = reverse(inputStr1, "");
+console.log(result1);
+result1 = reverse(result1, " ");
+console.log("#result1", result1);
+
+// Q. Check given two strings are anagram of each other
