@@ -452,3 +452,97 @@ result1 = reverse(result1, " ");
 console.log("#result1", result1);
 
 // Q. Check given two strings are anagram of each other
+
+function sortStr(str) {
+  let sortedStr = str.toLowerCase().split("").sort().join("");
+  return sortedStr;
+}
+
+const inputStr2 = "Mary";
+const inputStr3 = "Army";
+
+const resultStr1 = sortStr(inputStr2);
+const resultStr2 = sortStr(inputStr3);
+if (resultStr1 === resultStr2) {
+  console.log("Anagram of each other");
+} else {
+  console.log(" Not Anagram of each other");
+}
+
+// Q. Fibonacci Series
+const fiboArr = [0, 1];
+
+function fibonacciSeries(n) {
+  for (let i = 0; i < n; i++) {
+    fiboArr[i + 2] = fiboArr[i] + fiboArr[i + 1];
+  }
+  console.log(fiboArr);
+}
+
+fibonacciSeries(5);
+
+// Q. Armstrong Number
+function armStrong(num) {
+  let temp = num;
+  let sum = 0;
+  while (temp) {
+    let lastDigit = temp % 10;
+    temp = parseInt(temp / 10);
+    sum += lastDigit ** 3;
+  }
+  return sum === num;
+}
+
+console.log(armStrong(153));
+console.log(armStrong(15));
+
+// Q. Factorial Number
+function factorial(num) {
+  let result = 1;
+  for (let i = 1; i <= num; i++) {
+    result = result * i;
+  }
+  return result;
+}
+
+console.log(factorial(5));
+
+function factorialRecursion(num) {
+  if ((num === 0) | (num === 1)) {
+    return 1;
+  }
+  return num * factorialRecursion(num - 1);
+}
+console.log(factorialRecursion(5));
+
+// Q.Swapping two variables without temporary variable
+
+let a = 10;
+let b = 20;
+[a, b] = [b, a];
+console.log(a, b);
+
+// Q. Palindrom
+
+let str1 = "a545a";
+
+function isPalindrom(str) {
+  str1 = str1.toLowerCase();
+  let str2 = str1.split("").reverse().join("");
+  return str1 === str2;
+}
+
+console.log(isPalindrom(str1));
+
+// Q. Remove Duplicate elements from Array
+
+let dupicateElementArr = [1, 1, 2, 5, 5, 6, 7, 7];
+
+function removeDuplicate(arr) {
+  const set = new Set(arr);
+  return [...set];
+}
+
+console.log(removeDuplicate(dupicateElementArr));
+
+//
