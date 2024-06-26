@@ -545,4 +545,52 @@ function removeDuplicate(arr) {
 
 console.log(removeDuplicate(dupicateElementArr));
 
-//
+// Q.Add two array values of same index and create another array
+
+let arr1 = [1, 2, 3, 4, 5, 6, 7, 8];
+let arr2 = [2, 3, 4, 5, 6, 7, 8, 9];
+
+function addArray(arr1, arr2) {
+  const result = arr1.map((item, index) => {
+    return item + arr2[index];
+  });
+  return result;
+}
+
+console.log(addArray(arr1, arr2));
+
+// Q. 2:0 => 2 is element of arr3 and 0 is how many times 2 is repeating in arr4;
+
+let arr4 = [3, 4, 5, 6, 5, 4, 5];
+let arr3 = [2, 3, 4, 5, 6];
+
+function countFreequency(arr3, arr4) {
+  const result = arr3.map((item, index) => {
+    let count = 0;
+    arr4.forEach((item2) => {
+      if (item === item2) {
+        count++;
+      }
+    });
+    return `${item}:${count}`;
+  });
+  return result;
+}
+
+console.log(countFreequency(arr3, arr4));
+
+// Q. Convert nested Object into flat Object
+
+let student = {
+  name: "Ram",
+  address: {
+    present: {
+      city: "Hapur",
+      pincode: 245101,
+    },
+    office: {
+      city: "Noida",
+      pincode: 201301,
+    },
+  },
+};
