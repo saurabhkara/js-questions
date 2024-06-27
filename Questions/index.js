@@ -584,7 +584,7 @@ console.log(countFreequency(arr3, arr4));
 let student = {
   name: "Ram",
   address: {
-    present: {
+    prersonal: {
       city: "Hapur",
       pincode: 245101,
     },
@@ -594,3 +594,53 @@ let student = {
     },
   },
 };
+
+// output format
+
+// let output = {
+//   student_name: "ram",
+//   student_address_personal_city: "Hapur",
+//   student_address_personal_pincode: 245101,
+//   student_address_office_city: "Noida",
+//   student_address_office_pincode: 201301,
+// };
+
+function flatteningObj(obj, name) {
+  let result = {};
+  if (typeof obj !== "object") {
+    return;
+  }
+
+  for (let key in obj) {
+    let keyValue = name + "_" + key;
+    if (typeof obj[key] === "object") {
+      let innerResult = flatteningObj(obj[key], keyValue);
+      for (let key2 in innerResult) {
+        result[key2] = innerResult[key2];
+      }
+    } else {
+      result[keyValue] = obj[key];
+    }
+  }
+
+  return result;
+}
+
+console.log(flatteningObj(student, "student"));
+
+// Q. Write function for add(a)(b)(c)(d)...()
+
+function add(a) {
+  return function (b) {
+    if (b) {
+      return add(a + b);
+    }
+    return a;
+  };
+}
+
+console.log(add(3)(4)(5)());
+console.log(add(3)(4)(5)(6)());
+
+// Q. Program to convert multidimesional array to single array
+let arr = [1, [2, 3], [4, 5, 6, [7, 8]], [9], 11];
