@@ -644,3 +644,190 @@ console.log(add(3)(4)(5)(6)());
 
 // Q. Program to convert multidimesional array to single array
 let arr = [1, [2, 3], [4, 5, 6, [7, 8]], [9], 11];
+
+function flatteningArr(arr) {
+  if (!Array.isArray(arr)) {
+    return;
+  }
+  const result = [];
+  for (let item of arr) {
+    if (Array.isArray(item)) {
+      const innerResult = flatteningArr(item);
+      for (let item2 of innerResult) {
+        result.push(item2);
+      }
+    } else {
+      result.push(item);
+    }
+  }
+  return result;
+}
+
+console.log(flatteningArr(arr));
+
+// Q. Program to sort only positive number
+const arr6 = [-1, 40, 20, -4, 10, 2, 70, -2, 6, 9];
+
+function sortOnlyPositiveNumber(arr) {
+  const sortedArr = arr6.filter((item) => item > 0).sort((a, b) => a - b);
+  let index = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 0) {
+      arr[i] = sortedArr[index++];
+    }
+  }
+  return arr;
+}
+
+console.log(sortOnlyPositiveNumber(arr6));
+
+// Q. Remove duplicate keys and merge array values of an object in JavaScript
+
+const originalArr = [
+  { id: 1, element: [1, 2] },
+  { id: 2, element: [3, 4] },
+  { id: 2, element: ["a", "b"] },
+  { id: 3, element: ["a2b"] },
+];
+function removeDuplcateAndMerge(arr) {
+  const result = arr.reduce((acc, item) => {
+    if (acc[item.id]) {
+      acc[item.id].element = [...acc[item.id].element, ...item.element];
+    } else {
+      acc[item.id] = item;
+    }
+    return acc;
+  }, {});
+  return Object.values(result);
+}
+
+console.log(removeDuplcateAndMerge(originalArr));
+
+// Q. Shift zero at the end of array
+
+let arr7 = [10, 0, 230, 7, 9, 0, 10];
+
+function shiftZeroAtEnd(arr) {
+  let count = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 0) {
+      count++;
+    } else {
+      arr[i - count] = arr[i];
+    }
+  }
+
+  for (let i = arr.length - count; i < arr.length; i++) {
+    arr[i] = 0;
+  }
+  return arr;
+}
+
+console.log(shiftZeroAtEnd(arr7));
+
+// Q. Program to fetch student Object whose average marks is grether than other students
+
+const students = [
+  { name: "Ram", marks: [70, 80, 65, 90, 65] },
+  { name: "Shyam", marks: [80, 62, 70, 75, 81] },
+  { name: "M Sharan", marks: [74, 67, 72, 69, 84] },
+];
+
+function getStudentDetail(arr) {
+  const result = arr.reduce(
+    (acc, item) => {
+      const sum = item.marks.reduce((acc2, item) => {
+        acc2 = acc2 + item;
+        return acc2;
+      }, 0);
+      const currentAverage = sum / 5;
+      if (acc.average < currentAverage) {
+        return {
+          average: currentAverage,
+          item: item,
+        };
+      }
+      return acc;
+    },
+    { average: 0, item: {} }
+  );
+  return result;
+}
+
+console.log(getStudentDetail(students));
+
+// Q.  Reverse the String without inbuild method
+
+const str4 = "Hello World";
+
+function reverseStrWithoutInbuild(str) {
+  let result = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    result = result + str[i];
+  }
+  return result;
+}
+console.log(reverseStrWithoutInbuild(str4));
+
+// Q. Print 1 to 5 number in every one
+
+function printNumber() {
+  let count = 1;
+  const setIntervalId = setInterval(() => {
+    console.log(count++);
+    if (count === 6) {
+      clearInterval(setIntervalId);
+    }
+  }, 1000);
+}
+
+// printNumber();
+
+// Q. Program to return odd repeating value of an array with count
+const countOriginalArr = ["a", "a", "b", "d", "e", "d", "a", "b"];
+// output format :['a:3','e:1'];
+
+function countOddElem(arr) {
+  const outputObj = arr.reduce((acc, item) => {
+    if (acc[item]) {
+      acc[item] = acc[item] + 1;
+    } else {
+      acc[item] = 1;
+    }
+    return acc;
+  }, {});
+  const result = Object.entries(outputObj)
+    .filter((item) => {
+      if (item[1] % 2 === 1) return true;
+    })
+    .map((item) => `${item[0]}:${item[1]}`);
+  return result;
+}
+
+console.log(countOddElem(countOriginalArr));
+
+// Q. Same key value put together in array
+
+let input = [
+  { type: "abc", value: 123 },
+  { type: "def", value: 123 },
+  { type: "abc", value: 452 },
+];
+
+// Output => { 'abc':[123,453],'def':[123]}
+
+function sameKeyValue(arr) {
+  const resultObj = arr.reduce((acc, item) => {
+    if (acc[item.type]) {
+      acc[item.type] = [...acc[item.type], item.value];
+    } else {
+      acc[item.type] = [item.value];
+    }
+    return acc;
+  }, {});
+  return resultObj;
+}
+
+console.log(sameKeyValue(input));
+
+// Q.
