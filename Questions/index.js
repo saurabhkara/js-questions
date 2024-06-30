@@ -830,4 +830,85 @@ function sameKeyValue(arr) {
 
 console.log(sameKeyValue(input));
 
-// Q.
+// Q. Reverse the given string  inplace(without extra space)
+
+function revesStringRecursive(str) {
+  if (str === "") {
+    return "";
+  }
+  const remainingStr = str.slice(1);
+  console.log("#remainig", remainingStr);
+  return revesStringRecursive(remainingStr) + str[0];
+}
+
+console.log(revesStringRecursive("saurabh"));
+
+// Q. Print Duplicate characters from string
+//Time comlexity = O(n)
+function printDuplicateCharacters(str) {
+  if (str === "" || typeof str !== "string") {
+    return;
+  }
+  let obj = {};
+  for (let char of str) {
+    if (obj[char]) {
+      obj[char] = obj[char] + 1;
+    } else {
+      obj[char] = 1;
+    }
+  }
+  for (let key in obj) {
+    if (obj[key] > 1) {
+      console.log("Duplicate char==>", key);
+    }
+  }
+}
+
+printDuplicateCharacters("saurabhkumar");
+
+// Q. Check given strings are anagram of each other in better and optimize way
+
+function anagramOptimizeWay(str1, str2) {
+  if (typeof str1 !== "string" || typeof str2 !== "string") {
+    return;
+  }
+  let obj = {};
+  for (let char of str1) {
+    if (obj[char]) {
+      obj[char] = obj[char] + 1;
+    } else {
+      obj[char] = 1;
+    }
+  }
+
+  for (let char of str2) {
+    if (obj[char]) {
+      obj[char] = obj[char] - 1;
+    } else {
+      return false;
+    }
+  }
+  return true;
+}
+
+// T(n)= O(n)
+console.log(anagramOptimizeWay("army", "mary"));
+
+// Q. Countv the number of Vowels and consonants in given string
+
+function countVowelAndConsonant(str) {
+  let vowelCount = 0;
+  let consonantCont = 0;
+  const vowelArr = ["a", "e", "i", "o", "u"];
+
+  for (let i = 0; i < str.length; i++) {
+    if (vowelArr.includes(str[i])) {
+      vowelCount++;
+    } else {
+      consonantCont++;
+    }
+  }
+  return [vowelCount, consonantCont];
+}
+
+console.log(countVowelAndConsonant("saurabh"));
