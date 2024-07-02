@@ -912,3 +912,48 @@ function countVowelAndConsonant(str) {
 }
 
 console.log(countVowelAndConsonant("saurabh"));
+
+// Q. Count the occurance of given character in a string
+
+function countGivenCharacter(str, char) {
+  if (typeof char !== "string" || str === "") {
+    return null;
+  }
+  let count = 0;
+
+  for (let item of str) {
+    if (item === char) {
+      count++;
+    }
+  }
+  return count;
+}
+
+console.log(countGivenCharacter("saurabh", "b"));
+
+// Q. Print first non-repeating occurance of character in string
+
+function printFirstOccurance(str) {
+  if (typeof str !== "string" || str === "") {
+    return;
+  }
+  let count = {};
+  for (let char of str) {
+    if (count[char]) {
+      count[char] = count[char] + 1;
+    } else {
+      count[char] = 1;
+    }
+  }
+
+  for (let char of str) {
+    if (count[char] === 1) {
+      return char;
+    }
+  }
+  return false;
+}
+
+console.log(printFirstOccurance("saurabh"));
+
+// Q.
