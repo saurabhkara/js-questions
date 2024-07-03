@@ -216,7 +216,7 @@ const rett = (function () {
 
 console.log("rett", rett);
 
-// Q. What is memoization ?
+// Q.13 What is memoization ?
 // Memoization is technique to increase the functions performance by caching its previously computed result.
 // If its already calculated in past we don't need to calculate simply return the value from cache.
 // JavaScript Closures are to used for memoization.
@@ -239,13 +239,13 @@ console.log(memo(15));
 console.log(memo(15));
 console.log(memo(15));
 
-// Q. What is Hoisting ?
+// Q.14 What is Hoisting ?
 // Hoisting is javaScript behaviour in which variables,functions are moved to top of their scope before its code execution;
 
 console.log(name1);
 var name1 = "saurabh";
 
-// Q. What are classes in JavaScript ?
+// Q.15 What are classes in JavaScript ?
 // Classes in javascript is syntatic sugar over javascript exsiting type of prototype based inheritance.
 //Classes are the blue print of objects.
 
@@ -261,7 +261,7 @@ class PrintName {
 const printObj = new PrintName("Saurabh");
 printObj.print();
 
-// Q. What are closures ?
+// Q.16 What are closures ?
 //Closures are function and its lexical scope within which it has been defined. It has access to its variable, outer function variable and global variable.
 
 function outer() {
@@ -274,10 +274,10 @@ function outer() {
 
 outer();
 
-// Q. What are the modules ?
+// Q.17 What are the modules ?
 // Module refers to small indepedent reuseable code. It also act as foundation of many javascript design patterns.
 
-// Q. What are promises in JavaScript ?
+// Q.18 What are promises in JavaScript ?
 // Promises in javascript is object that will return a value sometime in future either a resolve value or rejected value.
 
 const promise = new Promise((resolve, reject) => {
@@ -301,7 +301,7 @@ promise
     console.log(error);
   });
 
-// Q. What are callbacks function
+// Q.19 What are callbacks function
 // Callback is function passed into another function as argument and invoked inside outer function to perform some  action
 
 function outerFunc(callback) {
@@ -315,10 +315,10 @@ function callbackFunc(name) {
 
 // outerFunc(callbackFunc);
 
-// Q. What is callback in callback ?
+// Q.20 What is callback in callback ?
 // You can nest one callback inside into another callback to execute the actions sequentially one after another.
 
-// Q. What is promise chaining ?
+// Q.21 What is promise chaining ?
 // Process of executing a sequence of asynchronous task one after another using promise is called promise chaining.
 
 const samplePromise = new Promise((resolve, reject) => {
@@ -339,7 +339,7 @@ samplePromise
     console.log(res);
   });
 
-// Q. Promise.all([])
+// Q.22 Promise.all([])
 // Promise.all([]) method takes array of promises and gets resolved when all promises are resolved. It will rejected anyone of rejected.
 
 const promise1 = new Promise((resolve, reject) => {
@@ -364,7 +364,7 @@ Promise.all([promise1, promise2, promise3])
     console.log("rejected", err);
   });
 
-// Q. Promise.race() method
+// Q.23 Promise.race() method
 // Promise.race() method takes array of promise and return the promise instance which is firstly resolved.
 
 const p1 = new Promise((resolve, reject) => {
@@ -393,7 +393,7 @@ Promise.race([p1, p2, p3])
     console.log("Rejected", err);
   });
 
-// Q. What is async function ?
+// Q.24 What is async function ?
 // Async function is function declared with async keyword which enables asynchrounous, promise based behaviour to be written in cleaner style to avoid promise chaining.
 
 async function sampleAsyncFunc() {
@@ -402,7 +402,7 @@ async function sampleAsyncFunc() {
 
 sampleAsyncFunc();
 
-// Q.Iterable in Object in JavaScript
+// Q.25 Iterable in Object in JavaScript
 
 const iterableObj = {
   name: "saurabh",
@@ -428,17 +428,17 @@ console.log("#iterator", iterator.next());
 console.log("#iterator", iterator.next());
 console.log("#iterator", iterator.next());
 
-// Q. Global Execution context in JavaScript
+// Q.26 Global Execution context in JavaScript
 // Global execution context is special environment created by javascript engine to execute and run javascript code
 
-// Q. Functional execution context
+// Q.27 Functional execution context
 // Functional execution context is created whenever function is invoked within global execution context.
 
-// Q. Debouncing
+// Q.28 Debouncing
 // Debouncing is programming pattern that allows delaying execution of some piece of code until a specied time to avoid
 // to avoid unneccasary CPU cycles, API calls and improve performance.
 
-// Q. Program to reverse each word in the given string
+// Q.29 Program to reverse each word in the given string
 
 let inputStr1 = "Welcome to JavaScript Practice Question";
 
@@ -451,7 +451,7 @@ console.log(result1);
 result1 = reverse(result1, " ");
 console.log("#result1", result1);
 
-// Q. Check given two strings are anagram of each other
+// Q.30 Check given two strings are anagram of each other
 
 function sortStr(str) {
   let sortedStr = str.toLowerCase().split("").sort().join("");
@@ -469,7 +469,7 @@ if (resultStr1 === resultStr2) {
   console.log(" Not Anagram of each other");
 }
 
-// Q. Fibonacci Series
+// Q.31 Fibonacci Series
 const fiboArr = [0, 1];
 
 function fibonacciSeries(n) {
@@ -481,7 +481,7 @@ function fibonacciSeries(n) {
 
 fibonacciSeries(5);
 
-// Q. Armstrong Number
+// Q.32 Armstrong Number
 function armStrong(num) {
   let temp = num;
   let sum = 0;
@@ -496,7 +496,7 @@ function armStrong(num) {
 console.log(armStrong(153));
 console.log(armStrong(15));
 
-// Q. Factorial Number
+// Q.33 Factorial Number
 function factorial(num) {
   let result = 1;
   for (let i = 1; i <= num; i++) {
@@ -515,14 +515,14 @@ function factorialRecursion(num) {
 }
 console.log(factorialRecursion(5));
 
-// Q.Swapping two variables without temporary variable
+// Q.34 Swapping two variables without temporary variable
 
 let a = 10;
 let b = 20;
 [a, b] = [b, a];
 console.log(a, b);
 
-// Q. Palindrom
+// Q.35 Palindrom
 
 let str1 = "a545a";
 
@@ -534,7 +534,7 @@ function isPalindrom(str) {
 
 console.log(isPalindrom(str1));
 
-// Q. Remove Duplicate elements from Array
+// Q.36 Remove Duplicate elements from Array
 
 let dupicateElementArr = [1, 1, 2, 5, 5, 6, 7, 7];
 
@@ -545,7 +545,7 @@ function removeDuplicate(arr) {
 
 console.log(removeDuplicate(dupicateElementArr));
 
-// Q.Add two array values of same index and create another array
+// Q.37 Add two array values of same index and create another array
 
 let arr1 = [1, 2, 3, 4, 5, 6, 7, 8];
 let arr2 = [2, 3, 4, 5, 6, 7, 8, 9];
@@ -559,7 +559,7 @@ function addArray(arr1, arr2) {
 
 console.log(addArray(arr1, arr2));
 
-// Q. 2:0 => 2 is element of arr3 and 0 is how many times 2 is repeating in arr4;
+// Q.38  2:0 => 2 is element of arr3 and 0 is how many times 2 is repeating in arr4;
 
 let arr4 = [3, 4, 5, 6, 5, 4, 5];
 let arr3 = [2, 3, 4, 5, 6];
@@ -579,7 +579,7 @@ function countFreequency(arr3, arr4) {
 
 console.log(countFreequency(arr3, arr4));
 
-// Q. Convert nested Object into flat Object
+// Q.39 Convert nested Object into flat Object
 
 let student = {
   name: "Ram",
@@ -628,7 +628,7 @@ function flatteningObj(obj, name) {
 
 console.log(flatteningObj(student, "student"));
 
-// Q. Write function for add(a)(b)(c)(d)...()
+// Q.40 Write function for add(a)(b)(c)(d)...()
 
 function add(a) {
   return function (b) {
@@ -642,7 +642,7 @@ function add(a) {
 console.log(add(3)(4)(5)());
 console.log(add(3)(4)(5)(6)());
 
-// Q. Program to convert multidimesional array to single array
+// Q.41 Program to convert multidimesional array to single array
 let arr = [1, [2, 3], [4, 5, 6, [7, 8]], [9], 11];
 
 function flatteningArr(arr) {
@@ -665,7 +665,7 @@ function flatteningArr(arr) {
 
 console.log(flatteningArr(arr));
 
-// Q. Program to sort only positive number
+// Q.42 Program to sort only positive number
 const arr6 = [-1, 40, 20, -4, 10, 2, 70, -2, 6, 9];
 
 function sortOnlyPositiveNumber(arr) {
@@ -681,7 +681,7 @@ function sortOnlyPositiveNumber(arr) {
 
 console.log(sortOnlyPositiveNumber(arr6));
 
-// Q. Remove duplicate keys and merge array values of an object in JavaScript
+// Q.43 Remove duplicate keys and merge array values of an object in JavaScript
 
 const originalArr = [
   { id: 1, element: [1, 2] },
@@ -703,7 +703,7 @@ function removeDuplcateAndMerge(arr) {
 
 console.log(removeDuplcateAndMerge(originalArr));
 
-// Q. Shift zero at the end of array
+// Q.44 Shift zero at the end of array
 
 let arr7 = [10, 0, 230, 7, 9, 0, 10];
 
@@ -725,7 +725,7 @@ function shiftZeroAtEnd(arr) {
 
 console.log(shiftZeroAtEnd(arr7));
 
-// Q. Program to fetch student Object whose average marks is grether than other students
+// Q.45 Program to fetch student Object whose average marks is grether than other students
 
 const students = [
   { name: "Ram", marks: [70, 80, 65, 90, 65] },
@@ -756,7 +756,7 @@ function getStudentDetail(arr) {
 
 console.log(getStudentDetail(students));
 
-// Q.  Reverse the String without inbuild method
+// Q.46  Reverse the String without inbuild method
 
 const str4 = "Hello World";
 
@@ -769,7 +769,7 @@ function reverseStrWithoutInbuild(str) {
 }
 console.log(reverseStrWithoutInbuild(str4));
 
-// Q. Print 1 to 5 number in every one
+// Q.47 Print 1 to 5 number in every one
 
 function printNumber() {
   let count = 1;
@@ -783,7 +783,7 @@ function printNumber() {
 
 // printNumber();
 
-// Q. Program to return odd repeating value of an array with count
+// Q.49 Program to return odd repeating value of an array with count
 const countOriginalArr = ["a", "a", "b", "d", "e", "d", "a", "b"];
 // output format :['a:3','e:1'];
 
@@ -806,7 +806,7 @@ function countOddElem(arr) {
 
 console.log(countOddElem(countOriginalArr));
 
-// Q. Same key value put together in array
+// Q.50 Same key value put together in array
 
 let input = [
   { type: "abc", value: 123 },
@@ -830,7 +830,7 @@ function sameKeyValue(arr) {
 
 console.log(sameKeyValue(input));
 
-// Q. Reverse the given string  inplace(without extra space)
+// Q.51 Reverse the given string  inplace(without extra space)
 
 function revesStringRecursive(str) {
   if (str === "") {
@@ -843,7 +843,7 @@ function revesStringRecursive(str) {
 
 console.log(revesStringRecursive("saurabh"));
 
-// Q. Print Duplicate characters from string
+// Q.52 Print Duplicate characters from string
 //Time comlexity = O(n)
 function printDuplicateCharacters(str) {
   if (str === "" || typeof str !== "string") {
@@ -866,7 +866,7 @@ function printDuplicateCharacters(str) {
 
 printDuplicateCharacters("saurabhkumar");
 
-// Q. Check given strings are anagram of each other in better and optimize way
+// Q.53 Check given strings are anagram of each other in better and optimize way
 
 function anagramOptimizeWay(str1, str2) {
   if (typeof str1 !== "string" || typeof str2 !== "string") {
@@ -894,7 +894,7 @@ function anagramOptimizeWay(str1, str2) {
 // T(n)= O(n)
 console.log(anagramOptimizeWay("army", "mary"));
 
-// Q. Countv the number of Vowels and consonants in given string
+// Q.54 Countv the number of Vowels and consonants in given string
 
 function countVowelAndConsonant(str) {
   let vowelCount = 0;
@@ -913,7 +913,7 @@ function countVowelAndConsonant(str) {
 
 console.log(countVowelAndConsonant("saurabh"));
 
-// Q. Count the occurance of given character in a string
+// Q.55 Count the occurance of given character in a string
 
 function countGivenCharacter(str, char) {
   if (typeof char !== "string" || str === "") {
@@ -931,7 +931,7 @@ function countGivenCharacter(str, char) {
 
 console.log(countGivenCharacter("saurabh", "b"));
 
-// Q. Print first non-repeating occurance of character in string
+// Q.56 Print first non-repeating occurance of character in string
 
 function printFirstOccurance(str) {
   if (typeof str !== "string" || str === "") {
@@ -956,4 +956,47 @@ function printFirstOccurance(str) {
 
 console.log(printFirstOccurance("saurabh"));
 
-// Q.
+// Q.57 Reverse words in given Sentence
+
+let sentence1 = "anyone can achieve anything";
+
+function reverseWordsOfSenetence(sentence) {
+  if (typeof sentence !== "string" || sentence === "") {
+    return;
+  }
+  return sentence.split(" ").reverse().join(" ");
+}
+
+console.log(reverseWordsOfSenetence(sentence1));
+
+// Q.58 Check strings are rotation of each other
+// Two strings are rotations of each other if they contain the same characters in the same order,
+//just shifted by some number of positions.
+
+const rotation1 = "saurabh";
+const rotation2 = "aurabhs";
+//Method 1
+function isRotationByLoop(str1, str2) {
+  let tempStr = str1;
+  let length = str1.length;
+  for (let i = 0; i < length; i++) {
+    let firstChar = tempStr[0];
+    let remainigStr = tempStr.substring(1);
+    tempStr = remainigStr + firstChar;
+    if (tempStr === str2) {
+      return true;
+    }
+  }
+  return false;
+}
+
+console.log(isRotationByLoop(rotation1, rotation2));
+
+//Method 2 KMP Algorithm
+
+function isRotationByKMP(str1, str2) {
+  const concantedStr = str1 + str1;
+  return concantedStr.includes(str2);
+}
+
+console.log(isRotationByKMP(rotation1, rotation2));
