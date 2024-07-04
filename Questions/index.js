@@ -1000,3 +1000,65 @@ function isRotationByKMP(str1, str2) {
 }
 
 console.log(isRotationByKMP(rotation1, rotation2));
+
+// Q.59 Remove duplicate characters from string
+
+const dupliStr = "saurabh";
+
+//method 1 using set
+function removeDuplicateUsingSet(str) {
+  const set = new Set([...str]);
+  let result = "";
+  set.forEach((char) => (result = result + char));
+  return result;
+}
+console.log(removeDuplicateUsingSet("saurabh"));
+
+//method 2 Using Object
+
+function removeDuplicateUsingObj(str) {
+  const obj = {};
+
+  for (let char of str) {
+    if (obj[char]) {
+      obj[char] = obj[char] + 1;
+    } else {
+      obj[char] = 1;
+    }
+  }
+  let result = "";
+  for (let char of str) {
+    if (obj[char]) {
+      result = result + char;
+      delete obj[char];
+    }
+  }
+  return result;
+}
+
+console.log(removeDuplicateUsingObj("saurabh"));
+
+// Q.60  Maximum occuring character in given string
+
+function maxOccurredChar(str) {
+  if (typeof str !== "string" || str === "") {
+    return;
+  }
+  let obj = {};
+  for (let char of str) {
+    obj[char] = obj[char] ? obj[char] + 1 : 1;
+  }
+  let max = -1;
+  let result = "";
+
+  for (let key in obj) {
+    if (max < obj[key]) {
+      max = obj[key];
+      result = key;
+    }
+  }
+
+  return [result, max];
+}
+
+console.log(maxOccurredChar("saurabh"));
