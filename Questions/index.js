@@ -1008,11 +1008,12 @@ const dupliStr = "saurabh";
 //method 1 using set
 function removeDuplicateUsingSet(str) {
   const set = new Set([...str]);
+  console.log("#set", set);
   let result = "";
   set.forEach((char) => (result = result + char));
   return result;
 }
-console.log(removeDuplicateUsingSet("saurabh"));
+console.log(removeDuplicateUsingSet("saurabhhh"));
 
 //method 2 Using Object
 
@@ -1030,7 +1031,7 @@ function removeDuplicateUsingObj(str) {
   for (let char of str) {
     if (obj[char]) {
       result = result + char;
-      delete obj[char];
+      obj[char] = 0;
     }
   }
   return result;
@@ -1045,6 +1046,7 @@ function maxOccurredChar(str) {
     return;
   }
   let obj = {};
+
   for (let char of str) {
     obj[char] = obj[char] ? obj[char] + 1 : 1;
   }
@@ -1061,4 +1063,53 @@ function maxOccurredChar(str) {
   return [result, max];
 }
 
-console.log(maxOccurredChar("saurabh"));
+console.log(maxOccurredChar("saurs"));
+
+// Q.61 find max and min element of any element
+
+const arrMaxMin = [2, 5, 4, 6, 8, 9, -8];
+
+function findMaxMinItem(arr) {
+  if (!Array.isArray(arr)) {
+    return;
+  }
+  let max = -Infinity;
+  let min = Infinity;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+    if (arr[i] < min) {
+      min = arr[i];
+    }
+  }
+  return [max, min];
+}
+
+console.log(findMaxMinItem(arrMaxMin));
+
+// Q. 62 Peak element in array
+// A peak element in an array is an element that is greater than both of its adjacent elements.
+
+const peakElementArr1 = [1, 2, 5, 4, 6, 2, 1];
+
+function findPeakElementArr(arr) {
+  if (!Array.isArray(arr)) {
+    return -1;
+  }
+  if (arr.length === 1) {
+    return 0;
+  }
+  for (let i = 0; i < arr.length; i++) {
+    if (i === 0 && arr[i] > arr[i + 1]) {
+      return 0;
+    } else if (i === arr.length - 1 && arr[i] > arr[i - 1]) {
+      return i;
+    } else if (arr[i] > arr[i + 1] && arr[i] > arr[i - 1]) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+console.log(findPeakElementArr(peakElementArr1));
