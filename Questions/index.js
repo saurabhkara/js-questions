@@ -1113,3 +1113,128 @@ function findPeakElementArr(arr) {
 }
 
 console.log(findPeakElementArr(peakElementArr1));
+
+// Q.63 Second largest element in array
+
+const arr8 = [7, 8.6, 85, 65, -2];
+
+function secondLargetst(arr) {
+  let max1 = -Infinity;
+  let max2 = -Infinity;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (max1 < arr[i]) {
+      max2 = max1;
+      max1 = arr[i];
+    } else if (max2 < arr[i] && max2 < max1) {
+      max2 = arr[i];
+    }
+  }
+  return max2;
+}
+
+console.log(secondLargetst(arr8));
+
+// Q.64 Find max element from nested array
+
+const arr9 = [7, [8, 5], [89, 65, [36]], 9, 5];
+
+//Method 1
+function maxElementFromNestedArray(arr) {
+  if (!Array.isArray(arr)) {
+    return;
+  }
+  let max = -Infinity;
+  for (let elem of arr) {
+    if (Array.isArray(elem)) {
+      let innerMax = maxElementFromNestedArray(elem);
+      if (innerMax > max) {
+        max = innerMax;
+      }
+    } else {
+      if (elem > max) {
+        max = elem;
+      }
+    }
+  }
+  return max;
+}
+
+console.log(maxElementFromNestedArray(arr9));
+
+//Method 2
+
+function maxELementUsingFlatMethod(arr) {
+  let flatArr = arr.flat();
+  return Math.max(...flatArr);
+}
+
+console.log(maxELementUsingFlatMethod(arr9));
+
+// Q.65 Write the function that takes an array of objects and keys.
+// And returns a new array sorted based on the value of that key in non-decending order
+
+const arr10 = [
+  { id: 4, name: "Saurabh" },
+  { id: 3, name: "Ram" },
+  { id: 1, name: "Shyam" },
+  { id: 2, name: "Radha" },
+];
+
+function sortGivenArr(arr) {
+  return arr.sort((a, b) => a.id - b.id);
+}
+
+console.log(sortGivenArr(arr10));
+
+// Q.66  Implement a function that takes two sorted arrays and merges them into single sorted array without using
+// inbuilt methods
+
+let sortedArr1 = [2, 5, 8, 16, 96];
+const sortedArr2 = [8, 62, 72, 75];
+function mergeSortedArr(arr1, arr2) {
+  let i = 0;
+  let j = 0;
+  let k = 0;
+  let result = [];
+
+  while (i < arr1.length && j < arr2.length) {
+    if (arr1[i] < arr2[j]) {
+      result[k++] = arr1[i++];
+    } else {
+      result[k++] = arr2[j++];
+    }
+  }
+
+  while (i < arr1.length) {
+    result[k++] = arr1[i++];
+  }
+
+  while (j < arr2.length) {
+    result[k++] = arr2[j++];
+  }
+
+  return result;
+}
+
+console.log(mergeSortedArr(sortedArr1, sortedArr2));
+
+// Q.68 Toggle function arguments
+function toggleArgument(...args) {
+  let index = 0;
+  return function () {
+    if (index >= args.length) {
+      index = index % args.length;
+    }
+    return args[index++];
+  };
+}
+const toggleReturnFun = toggleArgument(1, 2, 6, 8);
+console.log(toggleReturnFun());
+console.log(toggleReturnFun());
+console.log(toggleReturnFun());
+console.log(toggleReturnFun());
+console.log(toggleReturnFun());
+console.log(toggleReturnFun());
+
+// Q.69
