@@ -219,3 +219,27 @@ fun().then((res) => {
 console.log("End");
 
 // Q.8 Guess the Output
+
+function job() {
+  return new Promise((resolve, reject) => {
+    reject();
+  });
+}
+
+const pi8 = job();
+pi8
+  .then(() => {
+    console.log("P8 Success 1");
+  })
+  .then(() => {
+    console.log("P8 Success 2");
+  })
+  .then(() => {
+    console.log(" P8 Sucess 3 ");
+  })
+  .catch(() => {
+    console.log("P8 Error 1");
+  })
+  .then(() => {
+    console.log("P8 Success 4");
+  });
