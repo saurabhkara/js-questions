@@ -1091,7 +1091,7 @@ console.log(findMaxMinItem(arrMaxMin));
 // Q. 62 Peak element in array
 // A peak element in an array is an element that is greater than both of its adjacent elements.
 
-const peakElementArr1 = [1, 2, 5, 4, 6, 2, 1];
+const peakElementArr1 = [1, 2, 5, 4, 6, 2, 9];
 
 function findPeakElementArr(arr) {
   if (!Array.isArray(arr)) {
@@ -1116,7 +1116,7 @@ console.log(findPeakElementArr(peakElementArr1));
 
 // Q.63 Second largest element in array
 
-const arr8 = [7, 8.6, 85, 65, -2];
+const arr8 = [1, 2, 7, 9, 8, 85, 65, -2];
 
 function secondLargetst(arr) {
   let max1 = -Infinity;
@@ -1237,4 +1237,4 @@ console.log(toggleReturnFun());
 console.log(toggleReturnFun());
 console.log(toggleReturnFun());
 
-// Q.69
+// Q.69  Guess the output
