@@ -7,7 +7,6 @@ function outer1() {
   }
   return inner;
 }
-
 outer1()();
 
 // Q.2 Guess the output
@@ -49,7 +48,7 @@ function outest4() {
   return outer;
 }
 
-var close4 = outest4()("Hi Closures");
+var close4 = outest4()("Hello Outer");
 close4();
 
 // Q.5 Guess the output
@@ -104,3 +103,11 @@ let count8 = 0;
     console.log(a);
   })(1);
 })(0);
+
+// Polyfills for Once
+// Polyfills for call, map and bind, apply
+
+// Generator function
+// call, apply and bind
+
+//this keyword
