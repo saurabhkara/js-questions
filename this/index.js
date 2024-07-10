@@ -48,8 +48,9 @@ user2.childObj.getDetail();
 const user3 = {
   name: "Saurabh3",
   getDetail() {
+    let name = "vijay";
     const getDetailArrow = () => {
-      console.log(this.name);
+      console.log(this.name, name);
     };
     getDetailArrow();
   },
@@ -57,4 +58,40 @@ const user3 = {
 
 user3.getDetail();
 
-//Note => this keyword inside arrow takes from its normal parent function
+//Note => this keyword inside arrow takes the value of this from its normal immediate parent function
+
+// Q .3  Guess the output
+const object = {
+  message: "Hello, World!",
+  getMessage() {
+    const message = "Hello, Earth!";
+    return [this.message, message];
+  },
+};
+
+console.log(object.getMessage());
+
+// Q.4 Guess the output
+
+function example4() {
+  return {
+    name: "Saurabh",
+    ref: this,
+  };
+}
+
+const user4 = example4();
+console.log(user4.ref.name);
+
+// Q.5 Chnage something in Q.4 to get name as Saurabh
+
+function example5() {
+  return {
+    name: "Saurabh",
+    ref: function () {
+      return this;
+    },
+  };
+}
+
+console.log(example5().ref().name);
