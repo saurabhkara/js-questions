@@ -95,3 +95,20 @@ function example5() {
 }
 
 console.log(example5().ref().name);
+
+// Q.7 Guess the output
+
+var length = 4;
+function callback() {
+  console.log(this.length); // What is logged?
+}
+
+const object7 = {
+  length: 5,
+  method() {
+    console.log(arguments);
+    arguments[0]();
+  },
+};
+
+object7.method(callback, 1, 2);
