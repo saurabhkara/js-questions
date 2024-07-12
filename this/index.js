@@ -169,3 +169,32 @@ const calc = {
 
 const result = calc.sum(10).mul(5).sub(2);
 console.log(result);
+
+// Explicit this binding using call,apply and bind method
+
+// Q. call method
+
+const object9 = {
+  name: "Saurabh 9",
+};
+
+function printName(city) {
+  console.log(this.name, city);
+}
+
+printName.call(object9, "Ara");
+
+// Q. Apply method
+function printDetail(city, state) {
+  console.log(this.name, city, state);
+}
+printDetail.apply(object9, ["Ara", "Bihar"]);
+
+// Q. Bind method
+
+function printNameAge(profession) {
+  console.log(this.name, profession);
+}
+
+const bindReturnMethod = printNameAge.bind(object9, "software developer");
+bindReturnMethod();
