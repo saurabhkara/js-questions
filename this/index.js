@@ -112,3 +112,60 @@ const object7 = {
 };
 
 object7.method(callback, 1, 2);
+
+// Q.8 Guess the Output
+
+const object8 = {
+  name: "Saurabh8",
+  getName() {
+    console.log(this.name);
+  },
+};
+
+setTimeout(object8.getName, 1000);
+// object.getName reference is passed inside setTimeout independently, so name property will no longer accessiable
+
+// Q.9 Change something so that getName will the name property value 'Saurabh8'
+
+setTimeout(function () {
+  object8.getName();
+}, 1000);
+
+// Q.10 Create a Object calculator
+let calculator = {
+  read() {
+    this.a = +prompt("a=", 0);
+    this.b = +prompt("b=", 0);
+  },
+  mul() {
+    return this.a * this.b;
+  },
+  sum() {
+    return this.a + this.b;
+  },
+};
+
+// calculator.read();
+// console.log(calculator.mul());
+// console.log(calculator.sum());
+
+// Q.11 Implement calc
+
+const calc = {
+  num: 0,
+  sum(a) {
+    this.num += a;
+    return this;
+  },
+  mul(a) {
+    this.num *= a;
+    return this;
+  },
+  sub(a) {
+    this.num -= a;
+    return this;
+  },
+};
+
+const result = calc.sum(10).mul(5).sub(2);
+console.log(result);
