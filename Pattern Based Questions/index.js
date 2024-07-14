@@ -105,3 +105,101 @@ function floydTriangle() {
 }
 
 console.log(floydTriangle());
+
+// Q.6 Print Butterfly pattern for N=3
+
+// *     *
+// **   **
+// *******
+// *******
+// **   **
+// *     *
+
+function butterFlyPattern(num) {
+  let result = "";
+  for (let i = 1; i <= num; i++) {
+    for (let j = 0; j < i; j++) {
+      result += "* ";
+    }
+    for (let j = 0; j < 2 * num - 2 * i; j++) {
+      result += "  ";
+    }
+    for (let j = 0; j < i; j++) {
+      result += "* ";
+    }
+    result += "\n";
+  }
+  for (let i = num; i > 0; i--) {
+    for (let j = 0; j < i; j++) {
+      result += "* ";
+    }
+    for (let j = 0; j < 2 * num - 2 * i; j++) {
+      result += "  ";
+    }
+    for (let j = 0; j < i; j++) {
+      result += "* ";
+    }
+    result += "\n";
+  }
+  return result;
+}
+
+console.log(butterFlyPattern(3));
+
+// Q. Print Inverted Pattern
+
+// 1 2 3 4 5
+// 1 2 3 4
+// 1 2 3
+// 1 2
+// 1
+
+function printInvertedPattern(num) {
+  let result = "";
+  for (let i = num; i > 0; i--) {
+    for (let j = 1; j <= i; j++) {
+      result += j + " ";
+    }
+    result += "\n";
+  }
+  return result;
+}
+
+console.log(printInvertedPattern(5));
+
+// Print 0-1 Pattern for N=5
+
+function zeroOnePattern(num) {
+  let result = "";
+  for (let i = 0; i < num; i++) {
+    for (let j = 0; j <= i; j++) {
+      if ((i + j) % 2) {
+        result += "0 ";
+      } else {
+        result += "1 ";
+      }
+    }
+    result += "\n";
+  }
+  return result;
+}
+
+console.log(zeroOnePattern(5));
+
+// Q. Print Rhombus for N=5
+
+function printRhombus(num) {
+  let result = "";
+  for (let i = 0; i < num; i++) {
+    for (let j = 0; j <= 4 - i; j++) {
+      result += "  ";
+    }
+    for (let j = 0; j < num; j++) {
+      result += "* ";
+    }
+    result += "\n";
+  }
+  return result;
+}
+
+console.log(printRhombus(5));
