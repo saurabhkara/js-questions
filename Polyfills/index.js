@@ -52,9 +52,9 @@ Array.prototype.myReduce = function (cb, acc) {
   return accumulator;
 };
 
-const reducedesult = arr1.myReduce((acc, item) => {
+const reducedesult = arr1.myReduce((acc, item, index, arr) => {
   return acc + item;
-});
+}, 0);
 
 console.log(reducedesult);
 
@@ -134,7 +134,7 @@ Function.prototype.myBind = function (context, ...fArgs) {
   return function (...sArgs) {
     if (context) {
       context.cb = this;
-      context.cb(...[...fArgs, ...sArgs]);
+      context.cb(...fArgs, ...sArgs);
     } else {
       obj.cb = this;
       obj.cb(...[...fArgs, ...sArgs]);

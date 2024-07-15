@@ -146,7 +146,7 @@ function butterFlyPattern(num) {
 
 console.log(butterFlyPattern(3));
 
-// Q. Print Inverted Pattern
+// Q.7 Print Inverted Pattern
 
 // 1 2 3 4 5
 // 1 2 3 4
@@ -167,7 +167,7 @@ function printInvertedPattern(num) {
 
 console.log(printInvertedPattern(5));
 
-// Print 0-1 Pattern for N=5
+//Q.8 Print 0-1 Pattern for N=5
 
 function zeroOnePattern(num) {
   let result = "";
@@ -186,7 +186,7 @@ function zeroOnePattern(num) {
 
 console.log(zeroOnePattern(5));
 
-// Q. Print Rhombus for N=5
+// Q.9 Print Rhombus for N=5
 
 function printRhombus(num) {
   let result = "";
@@ -203,3 +203,83 @@ function printRhombus(num) {
 }
 
 console.log(printRhombus(5));
+
+// Q.10 Print this number pattern
+//    1
+//   1 2
+//  1 2 3
+// 1 2 3 4
+//1 2 3 4 5
+
+function printNumberPatter10(num) {
+  let result = "";
+  for (let i = 1; i <= num; i++) {
+    for (let j = 1; j <= num - i; j++) {
+      result = result + " ";
+    }
+    for (let j = 1; j <= i; j++) {
+      result = result + j + " ";
+    }
+    result = result + "\n";
+  }
+  return result;
+}
+
+console.log(printNumberPatter10(5));
+
+// Q.11 Print PalindromicPattern
+//   1
+//  212
+// 32123
+//4321234
+
+function palindromicPattern(num) {
+  let result = "";
+  for (let i = 1; i <= num; i++) {
+    for (let j = 1; j <= num - i; j++) {
+      result += "  ";
+    }
+    for (let j = i; j >= 1; j--) {
+      result += j + " ";
+    }
+    for (let j = 2; j <= i; j++) {
+      result += j + " ";
+    }
+    result = result + "\n";
+  }
+  return result;
+}
+
+console.log(palindromicPattern(5));
+
+// Q.12 Print star pattern for N=4
+//    *
+//   ***
+//*********
+//   ***
+//    *
+
+function starPattern(num) {
+  let result = "";
+  for (let i = 1; i <= num; i++) {
+    for (let j = 1; j <= num - i; j++) {
+      result = result + " ";
+    }
+    for (let j = 1; j <= i; j++) {
+      result = result + "* ";
+    }
+    result += "\n";
+  }
+  for (let i = num; i >= 1; i--) {
+    for (let j = 1; j <= num - i; j++) {
+      result = result + " ";
+    }
+    for (let j = 1; j <= i; j++) {
+      result = result + "* ";
+    }
+    result += "\n";
+  }
+  return result;
+}
+
+console.log(starPattern(4));
