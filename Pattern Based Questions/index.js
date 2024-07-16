@@ -283,3 +283,26 @@ function starPattern(num) {
 }
 
 console.log(starPattern(4));
+
+// Q.13 Print Zig Zag Pattern for N=9
+
+//  *   *
+// * * * *
+//*   *   *
+
+function zigZag(num) {
+  let result = "";
+  for (let i = 1; i <= 3; i++) {
+    for (let j = 1; j <= num; j++) {
+      if ((i + j) % 4 === 0 || (i === 2 && j % 4 === 0)) {
+        result = result + "* ";
+      } else {
+        result = result + "  ";
+      }
+    }
+    result += "\n";
+  }
+  return result;
+}
+
+console.log(zigZag(9));
