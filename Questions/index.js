@@ -526,7 +526,7 @@ console.log(a, b);
 
 let str1 = "a545a";
 
-function isPalindrom(str) {
+function isPalindrom(str1) {
   str1 = str1.toLowerCase();
   let str2 = str1.split("").reverse().join("");
   return str1 === str2;
