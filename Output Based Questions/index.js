@@ -56,5 +56,32 @@ function getAge(...args) {
 getAge(21);
 //type of array is object.
 
+// Q.5 Guess the output
+
+let greeting;
+greetign = {}; // Typo!
+console.log(greetign);
+
+// Q.6
+
+const obj = { 1: "a", 2: "b", 3: "c" };
+const set = new Set([1, 2, 3, 4, 5]);
+
+obj.hasOwnProperty("1");
+obj.hasOwnProperty(1);
+set.has("1");
+set.has(1);
+
+// Q.
+
+const a = {};
+const b = { key: "b" };
+const c = { key: "c" };
+
+a[b] = 123;
+a[c] = 456;
+
+console.log(a[b]);
+
 // Reference
 // https://github.com/lydiahallie/javascript-questions
