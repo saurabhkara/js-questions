@@ -85,3 +85,51 @@ console.log(a[b]);
 
 // Reference
 // https://github.com/lydiahallie/javascript-questions
+
+// Debouncing practice
+function exampleForDebounce() {
+  console.log("Function called");
+}
+
+function debounce(func, delay) {
+  let timer = null;
+  return function () {
+    if (timer) {
+      clearTimeout(timer);
+    }
+    timer = setTimeout(() => {
+      func();
+    }, delay);
+  };
+}
+
+// const deboun = debounce(exampleForDebounce, 2000);
+// deboun();
+// deboun();
+// deboun();
+
+//Throthling
+
+function throatle(funct, delay) {
+  let sId = null;
+  let previousTimer = 0;
+  return function () {
+    let now = Date.now();
+    if (now - previousTimer < delay) {
+      return;
+    }
+    previousTimer = now;
+    sId = setTimeout(() => {
+      funct();
+    }, delay);
+  };
+}
+
+const throat = throatle(exampleForDebounce, 500);
+throat();
+throat();
+throat();
+throat();
+setTimeout(() => {
+  throat();
+}, 600);
