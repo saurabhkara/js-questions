@@ -1238,3 +1238,21 @@ console.log(toggleReturnFun());
 console.log(toggleReturnFun());
 
 // Q.69  Guess the output
+
+//Q. 70 Find longest word in the given sentence
+const exampleSentence = "Hello my name is saurabh kumar";
+
+function findMaxLengthWord(sentence) {
+  let max = "";
+  let temp = "";
+  for (let char of sentence) {
+    if (char === " ") {
+      max = max.length > temp.length ? max : temp;
+      temp = "";
+    }
+    temp = temp + char;
+  }
+  console.log(max);
+}
+
+console.log(findMaxLengthWord(exampleSentence));
