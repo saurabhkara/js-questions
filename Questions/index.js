@@ -1256,3 +1256,30 @@ function findMaxLengthWord(sentence) {
 }
 
 console.log(findMaxLengthWord(exampleSentence));
+
+// Q.71 Find count of maximum consecutive 1's in array
+
+let arr71 = [
+  1, 1, 1, 1, 5, 6, 8, 9, 6, 3, 2, 1, 1, 1, 1, 8, 9, 7, 3, 2, 1, 1, 1, 1, 1,
+];
+
+function maxOnes(arr) {
+  if (!Array.isArray(arr)) {
+    return;
+  }
+
+  let count = 0;
+  let max = 0;
+
+  for (let key of arr) {
+    if (key === 1) {
+      count = count + 1;
+      max = max > count ? max : count;
+    } else {
+      count = 0;
+    }
+  }
+  console.log("Maximum", max);
+}
+
+maxOnes(arr71);
