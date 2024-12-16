@@ -30,6 +30,7 @@ const obj5 = new Obj5("Obj5");
 
 //---------------------------------------------------------------
 //Q.2 What is a prototype chain ?
+// Prototype chaining is used to build new types of objects based on existing ones. It is similar to inheritance in a class based language
 
 function Person(name, city) {
   this.name = name;
@@ -53,6 +54,8 @@ const employee = new Employee("Saurabh Kumar", "Ara", 1);
 //---------------------------------------------------------------------
 // Q.3 What is the difference between Call, Apply and Bind ?
 
+//The call() method invokes a function with a given this value and arguments provided one by one
+
 const referenceObj = {
   name: "Saurabh refered",
   print: function (city) {
@@ -63,7 +66,12 @@ const anotherObj = {
   name: "Ram",
 };
 referenceObj.print.call(anotherObj, "Patna");
+
+// Invokes the function with a given this value and allows you to pass in arguments as an array
 referenceObj.print.apply(anotherObj, ["Ara"]);
+
+// Bind creates a new function that will have this set to the first parameter passed to bind().
+
 const bindCallback = referenceObj.print.bind(anotherObj, "Varanasi");
 bindCallback();
 
