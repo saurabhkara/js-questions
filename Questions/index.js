@@ -77,6 +77,7 @@ bindCallback();
 
 // Q.4 What is JSON?
 
+//JSON is Javascript object notaion file which is used to trasmite data over networks
 const parsedObj = {
   name: "Saurabh",
 };
@@ -117,6 +118,9 @@ console.log(10 === "10");
 
 // Q.9 First class function
 // In Javascript, functions are treated like any other variables.
+
+function firstClassfun() {}
+const fistClassVarbale = "";
 
 // Q.10 First Order Function
 // A first-order function is a function that doesn’t accept another function as an argument and doesn’t return a function as its return value.
@@ -174,7 +178,7 @@ function pureFunc(a, b) {
 console.log(pureFunc(5, 6));
 
 // Q.14 Purpuse of use of let keyword
-// Let statement variable is used to create block scope local variable. It also hoist but cannot accessed before its intialization
+// Let statement variable is used to create block scope local variable. It also hoist but cannot accessed before its declaration;
 
 // console.log(avariable);
 let avariable = 50;
