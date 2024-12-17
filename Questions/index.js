@@ -450,6 +450,28 @@ console.log("#iterator", iterator.next());
 // Debouncing is programming pattern that allows delaying execution of some piece of code until a specied time to avoid
 // to avoid unneccasary CPU cycles, API calls and improve performance.
 
+function fetchData(id) {
+  console.log("Fetch Data called", id);
+}
+
+function debouncing(func) {
+  let timeoutId = "";
+
+  return function (...args) {
+    if (timeoutId) {
+      console.log("previous timeout id cleared");
+      clearTimeout(timeoutId);
+    }
+    timeoutId = setTimeout(() => {
+      func(...args);
+    }, 1000);
+  };
+}
+
+const debounce = debouncing(fetchData);
+debounce(2);
+debounce(3);
+
 // Q.29 Program to reverse each word in the given string
 
 let inputStr1 = "Welcome to JavaScript Practice Question";
