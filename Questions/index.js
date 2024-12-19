@@ -486,6 +486,7 @@ result1 = reverse(result1, " ");
 console.log("#result1", result1);
 
 // Q.30 Check given two strings are anagram of each other
+//Anagram are two words having same letters but at differnt position
 
 function sortStr(str) {
   let sortedStr = str.toLowerCase().split("").sort().join("");
@@ -531,6 +532,7 @@ console.log(armStrong(153));
 console.log(armStrong(15));
 
 // Q.33 Factorial Number
+//the product of all positive integers less than or equal to that number
 function factorial(num) {
   let result = 1;
   for (let i = 1; i <= num; i++) {
@@ -557,9 +559,9 @@ let b = 20;
 console.log(a, b);
 
 // Q.35 Palindrom
+//A word that reads the same backwards as forwards
 
 let str1 = "a545a";
-
 function isPalindrom(str1) {
   str1 = str1.toLowerCase();
   let str2 = str1.split("").reverse().join("");
