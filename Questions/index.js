@@ -720,6 +720,26 @@ function flatteningArr(arr) {
 
 console.log(flatteningArr(arr));
 
+//Other way to flatten Array just little modification
+
+function flattenArray2(arr, result = []) {
+  if (!Array.isArray(arr)) {
+    return;
+  }
+
+  for (let key of arr) {
+    if (Array.isArray(key)) {
+      flattenArray2(key, result);
+    } else {
+      let index = result.length;
+      result[index] = key;
+    }
+  }
+  return result;
+}
+
+console.log(flattenArray2(arr));
+
 // Q.42 Program to sort only positive number
 const arr6 = [-1, 40, 20, -4, 10, 2, 70, -2, 6, 9];
 
