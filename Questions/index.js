@@ -610,6 +610,7 @@ function countFreequency(arr3, arr4) {
     });
     return `${item}:${count}`;
   });
+
   return result;
 }
 
@@ -663,6 +664,24 @@ function flatteningObj(obj, name) {
 }
 
 console.log(flatteningObj(student, "student"));
+
+//Other way to flatten just modifying little code
+
+function flattenObj2(obj, name, result = {}) {
+  if (typeof obj !== "object") {
+    return;
+  }
+  for (let key in obj) {
+    if (typeof obj[key] === "object") {
+      flattenObj2(obj[key], name + key, result);
+    } else {
+      result[name + key] = obj[key];
+    }
+  }
+  return result;
+}
+
+console.log(flattenObj2(student, "student"));
 
 // Q.40 Write function for add(a)(b)(c)(d)...()
 
