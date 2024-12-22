@@ -844,7 +844,7 @@ function reverseStrWithoutInbuild(str) {
 }
 console.log(reverseStrWithoutInbuild(str4));
 
-// Q.47 Print 1 to 5 number in every one
+// Q.47 Print 1 to 5 number every one second
 
 function printNumber() {
   let count = 1;
