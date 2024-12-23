@@ -912,7 +912,6 @@ function revesStringRecursive(str) {
     return "";
   }
   const remainingStr = str.slice(1);
-  console.log("#remainig", remainingStr);
   return revesStringRecursive(remainingStr) + str[0];
 }
 
