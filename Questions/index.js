@@ -1357,3 +1357,23 @@ function maxOnes(arr) {
 }
 
 maxOnes(arr71);
+
+//Q.72 Print the character to number of times
+//example abbccc
+const charString = "abc";
+const countCharacter = "123";
+
+for (let i = 0; i < charString.length; i++) {
+  const countChar = parseInt(count[i]);
+  for (j = 0; j < countChar; j++) {
+    console.log(charString[i]);
+  }
+}
+
+//using map method
+
+charString.split("").map((item, index) => {
+  const countChar = parseInt(countCharacter[index]);
+  const arr = new Array(countChar).fill(item);
+  arr.map((item) => console.log(item));
+});
