@@ -1139,7 +1139,7 @@ function maxOccurredChar(str) {
 
 console.log(maxOccurredChar("saurs"));
 
-// Q.61 find max and min element of any element
+// Q.61 find max and min element of array
 
 const arrMaxMin = [2, 5, 4, 6, 8, 9, -8];
 
