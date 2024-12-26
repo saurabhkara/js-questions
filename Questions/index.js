@@ -1139,6 +1139,26 @@ function maxOccurredChar(str) {
 
 console.log(maxOccurredChar("saurs"));
 
+//Another way to find max occurred character
+function maxOccuringChar(str) {
+  let charCount = {};
+  let maxCount = 0;
+  let maxCountChar = "";
+
+  for (let char of str) {
+    charCount[char] = (charCount[char] || 0) + 1;
+
+    if (charCount[char] > maxCount) {
+      maxCount = charCount[char];
+      maxCountChar = char;
+    }
+  }
+  console.log(charCount);
+  return { maxCount, maxCountChar };
+}
+
+console.log(maxOccuringChar("saurabh"));
+
 // Q.61 find max and min element of array
 
 const arrMaxMin = [2, 5, 4, 6, 8, 9, -8];
