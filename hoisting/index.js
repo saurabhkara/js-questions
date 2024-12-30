@@ -21,7 +21,7 @@ y3 = 12;
 console.log(y3);
 var y3;
 
-// Ans: 10
+// Ans: 12
 // Declaration is hoisted to the top of its scope. Before console. Its value is intialized with 12;
 
 //Q.4 what will be output ?
