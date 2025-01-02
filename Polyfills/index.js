@@ -203,3 +203,25 @@ const mySomeRes = arr.some((item, index, arr) => {
 });
 
 console.log(mySomeRes);
+
+// Q.10 Polyfill for every method
+
+Array.prototype.myEvery = function (cb) {
+  let flag = true;
+  for (let i = 0; i < this.length; i++) {
+    const cbFlag = cb(this[i], i, this);
+    if (!cbFlag) {
+      flag = false;
+    }
+  }
+
+  return flag;
+};
+
+const arr10 = [5, 2, 8, 6, 4, 2, 1];
+
+let result = arr.myEvery((item) => {
+  return item > 0;
+});
+
+console.log(result);
