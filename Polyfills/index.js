@@ -153,3 +153,26 @@ function example7(city, district, state) {
 const retundBind = example7.bind(obj7, "Ara", "Bhojpur", "Bihar");
 
 retundBind();
+
+// Q.8 Polyflls for Find method
+
+Array.prototype.myFind = function (cb) {
+  for (let i = 0; i < this.length; i++) {
+    if (cb(this[i], i, this)) {
+      return this[i];
+    }
+  }
+};
+
+const arr8 = [
+  { id: 1, name: "Saurabh" },
+  { id: 2, name: "Rahul" },
+  { id: 3, name: "Rohit" },
+];
+
+const findRes = arr8.myFind((item, index) => {
+  if (item.id === 2) {
+    return true;
+  }
+  return false;
+});
