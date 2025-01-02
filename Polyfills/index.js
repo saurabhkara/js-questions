@@ -176,3 +176,30 @@ const findRes = arr8.myFind((item, index) => {
   }
   return false;
 });
+
+// Q.9 Polyfill for some method
+
+const arr = [5, 8, 6, 9, 7, 3, 5, 2, 0];
+
+Array.prototype.mySome = function (cb) {
+  let flag = false;
+
+  for (let i = 0; i < this.length; i++) {
+    const cbRes = cb(this[i], i, this);
+    if (cbRes) {
+      flag = true;
+      break;
+    }
+  }
+
+  return flag;
+};
+
+const mySomeRes = arr.some((item, index, arr) => {
+  if (item === 3) {
+    return true;
+  }
+  return false;
+});
+
+console.log(mySomeRes);
