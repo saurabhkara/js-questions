@@ -19,6 +19,7 @@ example1A();
 
 // Q.2 this keyword inside object
 
+// this.name = "testing";
 const user1 = {
   name: "Saurabh1",
   getDetail() {
@@ -37,7 +38,7 @@ const user2 = {
   childObj: {
     newName: "Saurabh K2",
     getDetail() {
-      console.log("Name", this.name, "New Name", this.newName);
+      console.log("Name :", this.name, "New Name :", this.newName);
     },
   },
 };
@@ -58,7 +59,7 @@ const user3 = {
 
 user3.getDetail();
 
-//Note => this keyword inside arrow takes the value of this from its normal immediate parent function
+//Note => this keyword inside arrow function takes the value of this from its normal immediate parent function
 
 // Q .3  Guess the output
 const object = {
